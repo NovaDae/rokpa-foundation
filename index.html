@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROKPA - Job Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="logo"><img src="logo.png"></a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="3" y1="12" x2="21" y2="12"></line>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                  </button>
+                <div id="nav-menu" class="hidden md:flex items-center space-x-4">
+                    <!-- Your existing nav links go here -->
+                    <a href="#" class="text-gray-600 hover:text-blue-600">About</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600" id="contact-menu">Contact</a>
+                    <button class="btn btn-primary" id="login-menu">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="bg-white">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-900 pt-10">Find Your Perfect Match</h1>
+                <p class="text-xl text-gray-600 mb-10">Connect job seekers with the right employers</p>
+            </div>
+
+            <!-- Portal Selection -->
+            <div class="portal-grid grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Job Seeker Portal Card -->
+                <div class="portal-card">
+                    <h2 class="text-2xl font-semibold mb-4 text-blue-600" id="portal-card-title">Job Seeker Portal</h2>
+                    <p class="text-gray-600 mb-6" id="portal-card-desc">Create your profile and connect with potential employers</p>
+                    <button id="jobSeekerPortalBtn" class="btn btn-primary w-full">Enter Portal</button>
+                </div>
+
+                <!-- Employer Portal Card -->
+                <div class="portal-card">
+                    <h2 class="text-2xl font-semibold mb-4 text-blue-600" id="portal-card-title">Employer Portal</h2>
+                    <p class="text-gray-600 mb-6" id="portal-card-desc">Find the perfect candidate for your organization for brighter future.</p>
+                    <button id="employerPortalBtn" class="btn btn-primary w-full">Enter Portal</button>
+                </div>
+            </div>
+    </div>
+
+    <!-- Job Seeker Portal -->
+    <div id="jobSeekerPortal" class="portal">
+        <div class="max-w-4xl mx-auto mt-8 p-6 bg-white rounded-lg shadow-md lg:my-20">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold">Complete Your Profile</h2>
+                <button class="btn back-to-landing text-gray-600 hover:text-blue-600">← Back</button>
+            </div>
+            
+            <form id="jobSeekerForm" class="space-y-6">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h3 class="text-lg font-medium mb-4">Personal Information</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form-group">
+                            <label class="form-label" style="text-transform: capitalize;">First Name</label>
+                            <input type="text" name="firstName" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" style="text-transform: capitalize;">Last Name</label>
+                            <input type="text" name="lastName" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="number" name="phone" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" name="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Gender</label>
+                        <select name="gender" class="form-input" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="form-section">
+                    <h3 class="text-lg font-medium mb-4">Education</h3>
+                    <div class="form-group">
+                        <label class="form-label">Highest Education Level</label>
+                        <select name="education" class="form-input" required>
+                            <option value="">Select Education Level</option>
+                            <option value="high-school">High School</option>
+                            <option value="bachelors">Bachelor's Degree</option>
+                            <option value="masters">Master's Degree</option>
+                            <option value="phd">Ph.D.</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Institution Name</label>
+                        <input type="text" name="institution" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Field of Study</label>
+                        <input type="text" name="fieldOfStudy" class="form-input" required>
+                    </div>
+                </div>
+
+                <!-- Experience -->
+                <div class="form-section">
+                    <h3 class="text-lg font-medium mb-4">Work Experience</h3>
+                    <div class="form-group">
+                        <label class="form-label">Years of Experience</label>
+                        <input type="number" name="experience" class="form-input" required min="0">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Skills</label>
+                        <textarea name="skills" class="form-input h-32" placeholder="List your key skills..." required></textarea>
+                    </div>
+                </div>
+
+                <!-- Documents -->
+                <div class="form-section">
+                    <h3 class="text-lg font-medium mb-4">Documents</h3>
+                    <div class="form-group">
+                        <label class="form-label">Resume</label>
+                        <input type="file" name="resume" class="form-input" required accept=".pdf,.doc,.docx">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Profile Photo</label>
+                        <input type="file" name="profile" class="form-input" required accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">ID Proof</label>
+                        <input type="file" name="idProof" class="form-input" required accept=".pdf,.jpg,.jpeg,.png">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-full">Submit Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Employer Portal -->
+    <div id="employerPortal" class="portal">
+        <div class="max-w-7xl p-6 bg-white rounded-lg shadow-md" id="employer-portal">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold">Find Candidates</h2>
+                <button class="btn back-to-landing text-gray-600 hover:text-blue-600">← Back</button>
+            </div>
+
+            <!-- Filter Section -->
+            <form id="filterForm" class="mb-8">
+                <div class="filter-container">
+                    <div class="form-group">
+                        <label class="form-label">Minimum Experience</label>
+                        <select id="experienceFilter" class="filter-select">
+                            <option value="">Any</option>
+                            <option value="1">1+ years</option>
+                            <option value="3">3+ years</option>
+                            <option value="5">5+ years</option>
+                            <option value="10">10+ years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Education Level</label>
+                        <select id="educationFilter" class="filter-select">
+                            <option value="">Any</option>
+                            <option value="high-school">High School</option>
+                            <option value="bachelors">Bachelor's Degree</option>
+                            <option value="masters">Master's Degree</option>
+                            <option value="phd">Ph.D.</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Gender</label>
+                        <select id="genderFilter" class="filter-select">
+                            <option value="">Any</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Apply Filters</button>
+            </form>
+
+            <!-- Candidates Section -->
+            <div id="candidatesContainer" class="space-y-4">
+                <!-- Candidate cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+
+        <!-- About Page -->
+        <div id="aboutPage" class="bg-grey">
+            <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 lg:mt-20 lg:mb-40">
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold text-gray-900 mb-8">About ROKPA</h1>
+                    <div class="max-w-3xl mx-auto">
+                        <p class="text-lg text-gray-600 mb-8">
+                            ROKPA is a leading job matching platform dedicated to connecting talented professionals with outstanding career opportunities. Our mission is to streamline the hiring process and create meaningful connections between job seekers and employers.
+                        </p>
+    
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                            <div class="text-center">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Our Mission</h3>
+                                <p class="text-gray-600">To revolutionize the way people find their dream jobs and companies discover exceptional talent.</p>
+                            </div>
+    
+                            <div class="text-center">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Our Vision</h3>
+                                <p class="text-gray-600">To become the world's most trusted platform for career development and professional networking.</p>
+                            </div>
+    
+                            <div class="text-center">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">Our Values</h3>
+                                <p class="text-gray-600">Transparency, innovation, and commitment to excellence in everything we do.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Contact Page -->
+        <div id="contactPage" class="bg-grey">
+            <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 lg:mt-20">
+                <div class="max-w-3xl mx-auto">
+                    <h1 class="text-4xl font-bold text-gray-900 text-center mb-8">Contact Us</h1>
+    
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input type="text" name="name" class="form-input" required>
+                            </div>
+    
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-input" required>
+                            </div>
+    
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <input type="text" name="subject" class="form-input" required>
+                            </div>
+    
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea name="message" class="form-input" rows="4" required></textarea>
+                            </div>
+    
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">ROKPA FOUNDATION</h3>
+                    <p class="text-gray-400">Connecting talent with opportunity</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Contact Us</h3>
+                    <p class="text-gray-400">Email: info@rokpa.com</p>
+                    <p class="text-gray-400">Phone: +1 234 567 890</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Address</h3>
+                    <p class="text-gray-400">Boudha-6 Kathmandu, Nepal</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Add this HTML just before the closing body tag -->
+<div id="loginModal" class="modal hidden">
+    <div class="modal-content bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-semibold">Login</h2>
+            <button onclick="toggleLogin(false)" class="text-gray-500 hover:text-gray-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <form id="loginForm" class="space-y-4">
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" id="loginEmail" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" id="loginPassword" class="form-input" required>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <input type="checkbox" id="remember" class="mr-2">
+                    <label for="remember" class="text-sm text-gray-600">Remember me</label>
+                </div>
+                <a href="#" class="text-sm text-blue-600 hover:text-blue-800">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary w-full">Login</button>
+        </form>
+    </div>
+</div>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>
