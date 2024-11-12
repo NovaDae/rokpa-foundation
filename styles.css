@@ -262,7 +262,7 @@ body {
     outline: none;
 }
 
-@media (min-width:1280px){
+@media (min-width:1441px){
     #landingPage{
         background-size: 130rem, 60rem;
         background-repeat: no-repeat ;
@@ -276,10 +276,29 @@ body {
         margin-top:10rem;
         margin-bottom: 15rem
     }
-
-
 }
 
+@media(max-width:1440px){
+    #landingPage{
+        background-size: 130rem, 60rem;
+        background-repeat: no-repeat ;
+        padding: 3rem 4rem 5rem 4rem ;
+
+    
+    }
+
+    #employer-portal{
+        width: 90%;
+        margin-left:4rem;
+        margin-top:5rem;
+        margin-bottom: 5rem
+    }
+
+    #about-page, #contact-page{
+        margin:2rem 2rem;
+    }
+
+}
 /* Responsive Navigation */
 @media (max-width: 768px) {
     #mobile-menu-button {
